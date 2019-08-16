@@ -51,7 +51,7 @@ class TaskController extends Controller
             'name' => $request->name,
             'body' => $request->body
         ]);
-        
+
         return response()->json([
 
             'task' => $task,
@@ -97,8 +97,8 @@ class TaskController extends Controller
             'body' => 'required'
         ]);
 
-        $request->user()->tasks()->whereId($id)->update($request0>all());
-        
+        $task = $request->user()->tasks()->whereId($id)->update($request->all());
+
         return response()->json([
 
             'task' => $task,
@@ -116,7 +116,7 @@ class TaskController extends Controller
     {
         //
         $task->delete();
-        
+
         return response()->json([
 
             'task' => $task,
